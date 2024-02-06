@@ -1,16 +1,29 @@
+import { useState, createContext } from 'react';
 import './App.css';
 import Grid from './components/Grid/Grid';
 import Header from './components/Header/Header';
 import KeyBoard from './components/KeyBoard/KeyBoard';
 
-function App() {
+export const AppContext = createContext();
+
+export default function App() {
+  const emptyGrid = [
+    ['', '', '', '', ''],
+    ['', '', '', '', ''],
+    ['', '', '', '', ''],
+    ['', '', '', '', ''],
+    ['', '', '', '', ''],
+    ['', '', '', '', ''],
+  ];
+  const [grid, setGrid] = useState(emptyGrid);
+
   return (
     <>
-      <Header />
-      <Grid />
-      <KeyBoard />
+      <AppContext.Provider value={{ grid, setGrid }}>
+        <Header />
+        <Grid />
+        <KeyBoard />
+      </AppContext.Provider>
     </>
   );
 }
-
-export default App;

@@ -1,41 +1,40 @@
 import './KeyBoard.css';
 
 export default function KeyBoard() {
+  const keyRow1 = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'];
+  const keyRow2 = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'];
+  const keyRow3 = ['Z', 'X', 'C', 'V', 'B', 'N', 'M'];
+
   return (
     <div className="keyBoard">
       <div className="keyRowContainer">
         <div className="keyRow">
-          <button className="key">Q</button>
-          <button className="key">W</button>
-          <button className="key">E</button>
-          <button className="key">R</button>
-          <button className="key">T</button>
-          <button className="key">Y</button>
-          <button className="key">U</button>
-          <button className="key">I</button>
-          <button className="key">O</button>
-          <button className="key">P</button>
+          {keyRow1.map((key) => {
+            return (
+              <button className="key" key={'key' + key}>
+                {key}
+              </button>
+            );
+          })}
         </div>
-        <div className="keyRow" id="keyRow2">
-          <button className="key">A</button>
-          <button className="key">S</button>
-          <button className="key">D</button>
-          <button className="key">F</button>
-          <button className="key">G</button>
-          <button className="key">H</button>
-          <button className="key">J</button>
-          <button className="key">K</button>
-          <button className="key">L</button>
+        <div className="keyRow">
+          {keyRow2.map((key) => {
+            return (
+              <button className="key" key={'key' + key}>
+                {key}
+              </button>
+            );
+          })}
         </div>
         <div className="keyRow">
           <button className="specialKey">SEND</button>
-          <button className="key">Z</button>
-          <button className="key">X</button>
-          <button className="key">C</button>
-          <button className="key">V</button>
-          <button className="key">B</button>
-          <button className="key">N</button>
-          <button className="key">M</button>
+          {keyRow3.map((key) => {
+            return (
+              <button className="key" key={'key' + key}>
+                {key}
+              </button>
+            );
+          })}
           <button className="key" id="deleteKey">
             <svg
               xmlns="http://www.w3.org/2000/svg"
