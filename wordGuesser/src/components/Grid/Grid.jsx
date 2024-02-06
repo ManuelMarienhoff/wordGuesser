@@ -13,8 +13,3 @@ export default function Grid() {
     </div>
   );
 }
-// cada row tenga un estado focus - true/false
-// cada box tenga un estado focus - true/false
-// cuando se monte, row 1 focus, box 1 focus
-// cuando completo box 1, pase a la siguiente box
-// cuando completo row 1 (las 5 boxes), pase el focus a la row 2, box1

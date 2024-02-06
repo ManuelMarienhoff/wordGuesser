@@ -28,7 +28,9 @@ export default function KeyBoard() {
           })}
         </div>
         <div className="keyRow">
-          <button className="specialKey">SEND</button>
+          <button className="specialKey" id="sendKey">
+            SEND
+          </button>
           {keyRow3.map((key) => {
             return (
               <button className="key" key={'key' + key}>
