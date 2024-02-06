@@ -1,4 +1,5 @@
 import './KeyBoard.css';
+import Key from '../../components/Key';
 
 export default function KeyBoard() {
   const keyRow1 = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'];
@@ -12,7 +13,7 @@ export default function KeyBoard() {
           {keyRow1.map((key) => {
             return (
               <button className="key" key={'key' + key}>
-                {key}
+                <Key keyValue={key} />
               </button>
             );
           })}
@@ -21,7 +22,7 @@ export default function KeyBoard() {
           {keyRow2.map((key) => {
             return (
               <button className="key" key={'key' + key}>
-                {key}
+                <Key keyValue={key} />
               </button>
             );
           })}
@@ -31,7 +32,7 @@ export default function KeyBoard() {
           {keyRow3.map((key) => {
             return (
               <button className="key" key={'key' + key}>
-                {key}
+                <Key keyValue={key} />
               </button>
             );
           })}
