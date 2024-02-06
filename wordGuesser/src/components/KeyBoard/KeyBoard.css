@@ -1,0 +1,51 @@
+.keyBoard {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.key {
+  font-size: 20px;
+  font-weight: 300;
+  margin: 2px;
+  height: 40px;
+  width: 40px;
+  color: black;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+
+.keyRowContainer {
+  padding: 5px;
+  display: inline-block;
+}
+
+.keyRow {
+  display: flex;
+  justify-content: center;
+}
+
+#keyRow2 {
+  display: flex;
+  justify-content: center;
+}
+
+.specialKey {
+  font-size: 20px;
+  font-weight: 300;
+  margin: 2px;
+  height: 40px;
+  color: black;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+
+#deleteKey {
+  width: 55px;
+  position: relative;
+}
+
+.icon {
+  position: relative;
+  top: 2px;
+}

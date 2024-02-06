@@ -1,0 +1,11 @@
+.headerContainer {
+  background-color: pink;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  color: blue;
+  font-size: 30px;
+}
