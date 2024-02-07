@@ -8,3 +8,11 @@
   font-weight: 600;
   margin-left: 5px;
 }
+
+#correctLetter {
+  background-color: green;
+}
+
+#inWord {
+  background-color: yellow;
+}

@@ -1,13 +1,54 @@
 import './KeyBoard.css';
 import Key from '../../components/Key';
+import { useCallback, useEffect, useContext } from 'react';
+import { AppContext } from '../../App';
+
+const keyRow1 = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'];
+const keyRow2 = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'];
+const keyRow3 = ['Z', 'X', 'C', 'V', 'B', 'N', 'M'];
 
 export default function KeyBoard() {
-  const keyRow1 = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'];
-  const keyRow2 = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'];
-  const keyRow3 = ['Z', 'X', 'C', 'V', 'B', 'N', 'M'];
+  // *********************** KEY PRESS ***********************
+  const { onKeySelect, onEnter, onDelete } = useContext(AppContext);
 
+  const keyboardEvent = useCallback(
+    (e) => {
+      if (e.key === 'Enter') {
+        onEnter();
+      } else if (e.key === 'Backspace') {
+        onDelete();
+      } else {
+        keyRow1.forEach((key) => {
+          if (e.key.toLowerCase() === key.toLowerCase()) {
+            onKeySelect(key);
+          }
+        });
+        keyRow2.forEach((key) => {
+          if (e.key.toLowerCase() === key.toLowerCase()) {
+            onKeySelect(key);
+          }
+        });
+        keyRow3.forEach((key) => {
+          if (e.key.toLowerCase() === key.toLowerCase()) {
+            onKeySelect(key);
+          }
+        });
+      }
+    },
+    [onEnter, onDelete, onKeySelect]
+  ); /* para que no se actualizen nuestros componentes innecesariamente */
+
+  useEffect(() => {
+    document.addEventListener('keydown', keyboardEvent);
+
+    return () => {
+      document.removeEventListener('keydown', keyboardEvent);
+    };
+  }, [keyboardEvent]);
+
+  // *********************************************************************
   return (
-    <div className="keyBoard">
+    <div className="keyBoard" onKeyDown={keyboardEvent}>
       <div className="keyRowContainer">
         <div className="keyRow">
           {keyRow1.map((key) => {
